@@ -11,10 +11,11 @@ const ListOfTodos = ({todos}:Props) => {
     return (
         <div>
             {todos.map((todo:Todo) => {
-                <p>{todos.todo}</p>
-            }}
+                return <p>{todo.todo}</p>
+        })}
         </div>
     )
 }
 
 export default ListOfTodos
+

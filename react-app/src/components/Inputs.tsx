@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { MdDone, MdSave } from "react-icons/md";
+
 interface Todo {
     id: number;
     todo: string;
     isDone: boolean;
 }
 
-const InputFields = ({id, todo, isDone}:Todo) => {
+const InputFields = ({}:Todo) => {
     const [inputValue, setInputValue] = useState('');
     const [todos, setTodos] = useState<Todo[]>([]);
     const [nextId, setNextId] = useState(1);
@@ -26,13 +27,13 @@ const InputFields = ({id, todo, isDone}:Todo) => {
         setInputValue('')
     }
     const handleMarkDone = (id:number) => {
-        console.log("Completed")
+        //console.log("Completed")
         setTodos(prevTodos => prevTodos.map(todo =>
             todo.id === id ? {...todo, isDone: !todo.isDone} : todo
         ));
     }
     const handleDelete = (id:number) => {
-        console.log("Deleted")
+        //console.log("Deleted")
         setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
     }
     const handleEditStart = (todo: Todo) => {

@@ -1,12 +1,20 @@
+
+
+interface Todo {
+    title: string;
+    completed: boolean;
+}
 interface Props {
     todo: Todo
     todos: Todo[]
 }
-const SingleTodo = ({todo, todos}:Props) => {
+const SingleTodo = ({todos}:Props) => {
     return (
         <div>
             <p>List of Tasks</p>
-            <p>{todos}</p>
+            {todos.map((todo, index) => (
+                <p key={index}>{todo.title}</p>
+            ))}
         </div>
     )
 }
